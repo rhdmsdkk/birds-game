@@ -9,11 +9,11 @@ public class Aim : MonoBehaviour
     [SerializeField] private string aimDownKey;
 
     [Header("Bounds")]
-    [SerializeField] private float upperBound = 35f;
-    [SerializeField] private float lowerBound = -25f;
+    [SerializeField] private float upperBound = 60f;
+    [SerializeField] private float lowerBound = -50f;
 
     [Header("Attributes")]
-    [SerializeField] private float aimSpeed = 0.5f;
+    [SerializeField] private float aimSpeed = 3.5f;
 
     void Update()
     {

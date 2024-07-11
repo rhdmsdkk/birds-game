@@ -283,6 +283,25 @@ Transform:
   - {fileID: 164511944}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &14319403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 14319398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48ffd3c3bd049324aaec7431ac7ebf93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpKey: up
+  leftKey: left
+  rightKey: right
+  downKey: down
+  isFacingRight: 1
+  speed: 3
+  jumpCounter: 1
 --- !u!1 &164511943
 GameObject:
   m_ObjectHideFlags: 0
@@ -328,24 +347,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63e4fb79f984b8c42a3d01f0ccacecc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aimUpKey: q
-  aimDownKey: e
-  upperBound: 35
-  lowerBound: -25
-  aimSpeed: 0.5
-  m_GameObject: {fileID: 14319398}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48ffd3c3bd049324aaec7431ac7ebf93, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jumpKey: up
-  leftKey: left
-  rightKey: right
-  downKey: down
-  isFacingRight: 1
-  isGrounded: 0
-  speed: 3
+  aimUpKey: ','
+  aimDownKey: .
+  upperBound: 60
+  lowerBound: -50
+  aimSpeed: 3.5
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

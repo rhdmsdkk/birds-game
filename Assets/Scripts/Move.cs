@@ -12,25 +12,28 @@ public class Move : MonoBehaviour
 
     [Header("Statuses")]
     [SerializeField] private bool isFacingRight;
-    [SerializeField] private bool isGrounded;
 
     [Header("Attributes")]
     [SerializeField] private int speed;
+    [SerializeField] private int jumpCounter;
 
     private Rigidbody2D _rb;
+    private int _jumpCounter;
 
     // Start is called before the first frame update
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
+        _jumpCounter = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(jumpKey))
+        if (Input.GetKeyDown(jumpKey) && _jumpCounter > 0)
         {
             _rb.velocity = new(_rb.velocity.x, 12);
+            _jumpCounter--;
         }
 
         if (Input.GetKey(leftKey))
@@ -42,5 +45,9 @@ public class Move : MonoBehaviour
         {
             _rb.velocity = new(speed, _rb.velocity.y);
         }
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        _jumpCounter = jumpCounter;
     }
 }

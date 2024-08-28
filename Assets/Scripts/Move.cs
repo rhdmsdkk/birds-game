@@ -30,6 +30,17 @@ public class Move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        MoveAround();
+
+        Flip();
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        _jumpCounter = jumpCounter;
+    }
+
+    private void MoveAround()
+    {
         if (Input.GetKeyDown(jumpKey) && _jumpCounter > 0)
         {
             _rb.velocity = new(_rb.velocity.x, 12);
@@ -46,8 +57,13 @@ public class Move : MonoBehaviour
             _rb.velocity = new(speed, _rb.velocity.y);
         }
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+
+    private void Flip()
     {
-        _jumpCounter = jumpCounter;
+        if ((isFacingRight && Input.GetKeyDown(leftKey)) || (!isFacingRight && Input.GetKeyDown(rightKey)))
+        {
+            isFacingRight = !isFacingRight;
+            gameObject.transform.localScale = new Vector3(-gameObject.transform.localScale.x, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
+        }
     }
 }
